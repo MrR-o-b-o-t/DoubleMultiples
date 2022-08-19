@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
   <head>
-    <title>App Name: A Coding Project By Sam Kautz</title>
+    <title>Double Multiples: A Coding Project By Sam Kautz</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -27,12 +27,11 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="#"
           ><img
-            src=""
+            src="img/Sam Kautz - White Transparent PNG.png"
             class="d-inline-block align-text-top"
             alt="Sam Kautz Logo"
-            width="30"
-            height="24"
-          />APP NAME</a
+            height="34"
+          />Double Multiples</a
         >
         <button
           class="navbar-toggler"
@@ -69,7 +68,69 @@
       </div>
     </nav>
     <main class="flex-shrink-0">
-      <div class="container"></div>
+      <div class="container mt-5">
+        <div class="row row-cols-1 row-cols-lg-2">
+          <div class="col col-lg-4 border-end border-2">
+            <h2 class="fw-bold lh-1 mb-3">Double Multiple: A Coding Project</h2>
+            <h4 class="lead">
+              A Jacascript coding exersice using loops. This program prints
+              numbers from 1 to 100 and for two multiples of your choosing will
+              display "Double" for multiples of your first choice and "Multiple"
+              for multiples of your second choice. If a multiple of both "Double
+              Multiple" is displayed.
+            </h4>
+            <h2 class="mt-2 mt-md-5">Instructions</h2>
+            <p>
+              Enter a "Double" and "Multiple" value. Press the button and the
+              values will appear bellow "Results".
+            </p>
+          </div>
+          <div class="col col-lg-8">
+            <div>
+              <h5>Enter Values</h5>
+              <form class="row gy-2 gx-3">
+                <div class="col">
+                  <input
+                    id="dValue"
+                    type="number"
+                    class="form-control"
+                    placeholder="3"
+                    value="3"
+                    aria-label="Double Value"
+                  />
+                </div>
+                <div class="col">
+                  <input
+                    id="mValue"
+                    type="number"
+                    class="form-control"
+                    placeholder="5"
+                    value="5"
+                    aria-label="Multiple Value"
+                  />
+                </div>
+                <div class="col-12 d-flex justify-content-end">
+                  <button
+                    id="btnSubmit"
+                    type="button"
+                    class="btn btn-dark btn-lg"
+                  >
+                    Double Multiple
+                  </button>
+                </div>
+              </form>
+              <h2 class="mt-5 border-bottom border-2">Results</h2>
+              <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                  <tbody id="results">
+                    <!--Results go here-->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer class="footer mt-auto py-3 sticky-footer">
       <div class="container-fluid">
@@ -109,6 +170,17 @@
         </div>
       </div>
     </footer>
+
+    <template id="dmTemplate">
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </template>
+
     <!-- Bootstrap JS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
@@ -116,5 +188,8 @@
       crossorigin="anonymous"
     ></script>
     <script src="js/site.js"></script>
+    <script>
+      document.getElementById("btnSubmit").addEventListener("click", getValues);
+    </script>
   </body>
 </html>
