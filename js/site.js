@@ -14,26 +14,17 @@ if(Number.isInteger(dValue) && Number.isInteger(mValue)) {
 }}
 
 // find multiples for users values
-
 function findMultiples(dValue, mValue){
     let returnArray = []
+    
     for (let i = 1; i <= 100; i++) {
-        
-        if(i % dValue == 0 && i % mValue == 0) {
-            returnArray.push("Double Multiple")
-        } else if (i % dValue == 0) {
-            returnArray.push("Double")
-        } else if(i % mValue ==0) {
-            returnArray.push("Multiple")
-        } else {
-            returnArray.push(i)
-        }
+        let value = ((i % dValue == 0 ? "Double" : '') + (i % mValue == 0 ? " Multiple" : '') || i)
+        returnArray.push(value)
     }
     return returnArray
 }
 
 // display values to screen
-
 function displayResults(numArray) {
     let tableBody = document.getElementById("results")
     let templateRow = document.getElementById("dmTemplate")
